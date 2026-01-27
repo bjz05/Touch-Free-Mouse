@@ -4,14 +4,16 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   // Load env file based on `mode` in the current working directory.
-  // Set the third parameter to '' to load all env regardless of the `VITE_` prefix.
   const env = loadEnv(mode, (process as any).cwd(), '');
 
   return {
+    // IMPORTANT: This must match your GitHub repository name.
+    // e.g. If your repo is https://github.com/username/gesturescroll-ai
+    // then this must be '/gesturescroll-ai/'
+    base: '/gesturescroll-ai/',
     plugins: [react()],
     define: {
-      // This is crucial: We must polyfill `process.env.API_KEY` so the Google GenAI SDK 
-      // can find the key as expected in the browser environment.
+      // This polyfills process.env.API_KEY so the SDK works in the browser
       'process.env.API_KEY': JSON.stringify(env.API_KEY)
     },
     server: {
