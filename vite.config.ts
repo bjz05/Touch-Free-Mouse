@@ -8,9 +8,8 @@ export default defineConfig(({ mode }) => {
 
   return {
     // IMPORTANT: This must match your GitHub repository name.
-    // e.g. If your repo is https://github.com/username/gesturescroll-ai
-    // then this must be '/gesturescroll-ai/'
-    base: '/gesturescroll-ai/',
+    // Repo: https://github.com/bjz05/Touch-Free-Mouse
+    base: '/Touch-Free-Mouse/',
     plugins: [react()],
     define: {
       // This polyfills process.env.API_KEY so the SDK works in the browser

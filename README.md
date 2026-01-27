@@ -14,8 +14,8 @@ A contactless web interface powered by computer vision and Google Gemini. Naviga
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/yourusername/gesturescroll-ai.git
-    cd gesturescroll-ai
+    git clone https://github.com/bjz05/Touch-Free-Mouse.git
+    cd Touch-Free-Mouse
     ```
 
 2.  **Install dependencies**
