@@ -179,7 +179,7 @@ function App() {
                 HELP / GESTURES
              </button>
              <div className="text-xs font-mono text-slate-500 hidden md:block">
-               V 2.2.0
+               V 2.2.1
              </div>
           </div>
         </nav>
