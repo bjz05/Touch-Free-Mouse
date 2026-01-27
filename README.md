@@ -1,13 +1,12 @@
 # GestureScroll AI
 
-A contactless web interface powered by computer vision and Google Gemini. Navigate content using specific hand gestures and receive real-time AI feedback on your technique.
+A contactless web interface powered by computer vision. Navigate content using specific hand gestures and receive real-time AI feedback on your technique.
 
 ## Features
 
 *   **Touchless Navigation**: Scroll vertically and interact with content without physical contact.
 *   **Orientation-Aware Scrolling**: Uses hand orientation (Vertical vs. Horizontal) to determine scroll direction.
 *   **Air Click**: Detects depth (Z-axis) movement to simulate clicks via a "push" gesture.
-*   **AI Analysis**: Integrated Gemini 1.5 Flash provides coaching and analyzes gesture quality.
 *   **Privacy-First**: Video processing happens locally in the browser via MediaPipe.
 
 ## Usage Guide
