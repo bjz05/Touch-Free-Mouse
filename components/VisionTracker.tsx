@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FilesetResolver, HandLandmarker } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0/+esm";
+import { FilesetResolver, HandLandmarker } from "@mediapipe/tasks-vision";
 import { calculateCentroid, analyzeMovement } from '../utils/geometry';
 import { Point, GestureMode, FingerOrientation } from '../types';
 

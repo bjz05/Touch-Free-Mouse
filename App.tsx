@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
 import VisionTracker from './components/VisionTracker';
 import AssistantPanel from './components/AssistantPanel';
+import TipsModal from './components/TipsModal';
 import { GestureMode, Point } from './types';
 
 // Matching the visual descriptions of the attached images
@@ -16,6 +17,7 @@ function App() {
   const [mode, setMode] = useState<GestureMode>(GestureMode.IDLE);
   const [history, setHistory] = useState<Point[]>([]);
   const [isAssistantOpen, setIsAssistantOpen] = useState(false);
+  const [showTips, setShowTips] = useState(true); // Default to showing tips
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   
@@ -169,8 +171,16 @@ function App() {
             <div className="w-4 h-4 bg-gradient-to-tr from-blue-500 to-emerald-500 rounded-sm transform rotate-45"></div>
             <span className="font-bold tracking-tight text-lg">Aether<span className="text-slate-500">Scroll</span></span>
           </div>
-          <div className="text-xs font-mono text-slate-500 hidden md:block">
-            V 2.2.0 • POINT & CLICK ENABLED
+          <div className="flex items-center gap-4">
+             <button 
+                onClick={() => setShowTips(true)}
+                className="text-xs font-bold font-mono text-emerald-950 bg-emerald-500 border border-emerald-400 px-4 py-2 rounded-full hover:bg-emerald-400 transition-colors shadow-[0_0_15px_rgba(16,185,129,0.4)] animate-pulse"
+             >
+                HELP / GESTURES
+             </button>
+             <div className="text-xs font-mono text-slate-500 hidden md:block">
+               V 2.2.0
+             </div>
           </div>
         </nav>
 
@@ -187,23 +197,12 @@ function App() {
                 Experience the first zero-latency, orientation-aware scrolling engine powered by edge-based computer vision.
               </p>
               
-              <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto pt-8 opacity-70">
-                <div className="border border-white/10 rounded-xl p-4 bg-white/5 backdrop-blur-sm">
-                  <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Scroll Down</div>
-                  <div className="font-bold text-white">Vertical Fingers</div>
-                  <div className="text-emerald-400 text-xs mt-1">Push Up</div>
-                </div>
-                <div className="border border-white/10 rounded-xl p-4 bg-white/5 backdrop-blur-sm">
-                  <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Scroll Up</div>
-                  <div className="font-bold text-white">Horizontal Fingers</div>
-                  <div className="text-blue-400 text-xs mt-1">Pull Down</div>
-                </div>
-                <div className="border border-white/10 rounded-xl p-4 bg-white/5 backdrop-blur-sm border-blue-500/30">
-                  <div className="text-xs text-slate-500 uppercase tracking-wider mb-1">Click Mode</div>
-                  <div className="font-bold text-white">One Finger</div>
-                  <div className="text-red-400 text-xs mt-1">Push Forward</div>
-                </div>
-              </div>
+              <button 
+                 onClick={() => setShowTips(true)}
+                 className="mt-8 px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white text-lg font-bold rounded-full shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:shadow-[0_0_50px_rgba(16,185,129,0.6)] transition-all transform hover:-translate-y-1 border border-emerald-400/50"
+              >
+                 View Gesture Guide
+              </button>
            </div>
            
            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
@@ -339,6 +338,9 @@ function App() {
         isExpanded={isAssistantOpen} 
         onToggle={() => setIsAssistantOpen(!isAssistantOpen)} 
       />
+
+      {/* Tips Modal */}
+      {showTips && <TipsModal onClose={() => setShowTips(false)} />}
 
       {/* Lightbox Modal */}
       {selectedImage && (

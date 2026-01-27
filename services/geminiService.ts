@@ -3,9 +3,9 @@ import { Point } from "../types";
 
 // Helper to get the AI client
 const getAiClient = () => {
-  const apiKey = process.env.API_KEY;
-  if (!apiKey) throw new Error("API Key not found in environment");
-  return new GoogleGenAI({ apiKey });
+  // Use process.env.API_KEY directly as per SDK guidelines.
+  // Assume it is configured and available.
+  return new GoogleGenAI({ apiKey: process.env.API_KEY });
 };
 
 export const analyzeTrajectory = async (points: Point[]): Promise<string> => {
@@ -41,7 +41,7 @@ export const analyzeTrajectory = async (points: Point[]): Promise<string> => {
     return response.text || "Could not analyze gesture.";
   } catch (error) {
     console.error("Gemini Analysis Error:", error);
-    return "AI is currently unavailable. Please check your API key.";
+    return "AI Unavailable.";
   }
 };
 
@@ -58,6 +58,6 @@ export const askAssistant = async (question: string): Promise<string> => {
     return response.text || "I couldn't generate a response.";
   } catch (error) {
     console.error("Gemini Chat Error:", error);
-    return "I'm having trouble connecting to the server.";
+    return "Connection Error.";
   }
 };
