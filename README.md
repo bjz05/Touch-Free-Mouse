@@ -10,31 +10,6 @@ A contactless web interface powered by computer vision and Google Gemini. Naviga
 *   **AI Analysis**: Integrated Gemini 1.5 Flash provides coaching and analyzes gesture quality.
 *   **Privacy-First**: Video processing happens locally in the browser via MediaPipe.
 
-## Setup Instructions
-
-1.  **Clone the repository**
-    ```bash
-    git clone https://github.com/bjz05/Touch-Free-Mouse.git
-    cd Touch-Free-Mouse
-    ```
-
-2.  **Install dependencies**
-    ```bash
-    npm install
-    ```
-
-3.  **Configure API Key**
-    Create a file named `.env` in the root directory. Add your Google Gemini API Key:
-    ```env
-    API_KEY=your_google_api_key_here
-    ```
-    *Note: This key is required for the AI assistant features.*
-
-4.  **Run the Application**
-    ```bash
-    npm run dev
-    ```
-
 ## Usage Guide
 
 | Action | Gesture | Movement |
