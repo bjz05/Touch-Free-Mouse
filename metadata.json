@@ -1,0 +1,8 @@
+{
+  "name": "GestureScroll AI",
+  "description": "Contactless screen control using hand tracking and Gemini-powered analysis. Scroll with vertical movements, reset with an arc.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
