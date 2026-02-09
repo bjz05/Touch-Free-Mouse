@@ -1,6 +1,10 @@
 # GestureScroll AI
 
+**[Live Demo](https://bjz05.github.io/Touch-Free-Mouse/)**
+
 A contactless web interface powered by computer vision. Navigate content using specific hand gestures and receive real-time AI feedback on your technique.
+
+![GestureScroll AI Screenshot](screenshot.png)
 
 ## Features
 
